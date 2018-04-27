@@ -15,4 +15,4 @@
 
 2. vee-validate国际化
 
-3.vee-validte校验el-select组件
+3. vee-validte校验el-select组件
