@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-validate</title>
+	<link rel="stylesheet" href="node_modules\element-ui\lib\theme-chalk\index.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div id="app">
+		<h1 v-html="msg"></h1>
+		<button @click="changeLan">改变语言</button>
+		<div class="test1">
+			<div>
+				<label>Email1</label>
+				<input type="text" name="email" data-vv-scope="dvs1" v-validate.initial="'required|email|min:10'" :class="{'is-error': errors.has('dvs1.email') }">
+				<label>Email10</label>
+				<input type="text" name="email" data-vv-scope="dvs2" v-validate.initial="'required|email|min:10'" :class="{'is-error': errors.has('dvs2.email') }">
+			</div>
+			<div>
+				<label>Email2</label>
+				<input type="text" name="email2" v-model="email2" :class="{'is-error': errors.has('email2') }">
+			</div>
+			<div>
+				<label>name</label>
+				<input type="text" name="name" v-validate.initial="'truthy'" :class="{'is-error': errors.has('name') }">
+			</div>
+			<div>
+				<label>element-ui</label>
+				<el-select v-model="select" name="select" v-validate:select="'min_value:5'" :class="{'is-error': errors.has('select') }" size="small" placeholder="请选择">
+				    <el-option v-for="item in 10"
+				        :key="item"
+				        :label="item"
+				        :value="item">
+				    </el-option>
+				</el-select>
+			</div>
+		</div>
+		<div>
+			<h2>errors</h2>
+			<div>
+				<div v-for="(values,key) in errors.collect()">
+					{{key}}
+					<ol>
+						<li v-for="value in values">
+							{{value}}
+						</li>
+					</ol>						
+					</div>
+				</div>
+			</div>
+			{{errors.all()}}
+		</div>
+	</div>
+	<script src="node_modules\vue\dist\vue.js"></script>
+	<script src="node_modules\vee-validate\dist\vee-validate.js"></script>
+	<script src="node_modules\element-ui\lib\index.js"></script>
+	<script type="module" src="src/index.js"></script>
+</body>
+</html>
