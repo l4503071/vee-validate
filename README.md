@@ -5,7 +5,7 @@
 3. 除了vee-validate官网给出的基本实例，还使用veelidate校验了element-ui的控件。
 ## 使用方法：
 0. 安装依赖： npm i vue vee-validate element-ui
-1. 服务器启动该项目，本人使用sublime text3.0 启动该项目(参考：待补充 )；
+1. 服务器启动该项目，本人使用sublime text3.0 启动该项目(参考：https://l4503071.github.io/base/#/home/detail1 )；
 2. 输出网址 http://localhost:8080/vue-validate/index.html ,访问项目
 
 ## 代码说明
